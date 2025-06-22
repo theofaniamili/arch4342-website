@@ -37,6 +37,11 @@
 
 
   <div id="projects" class="container" >
+<div class="four columns">
+  <img src="images/pink.png" class="scale-with-grid">
+  <h5>Pink Project</h5>
+  <div id="pink-sketch"></div> <!-- Εδώ θα εμφανιστεί το p5.js sketch -->
+</div>
 
     <h3 class="half-bottom">Projects</h3>
 
@@ -78,7 +83,33 @@
 
 
   </div>
+  <!-- p5.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
+<!-- Κώδικας του έργου Pink Project -->
+<script>
+  new p5(function(p) {
+    p.setup = function() {
+      let canvas = p.createCanvas(300, 300);
+      canvas.parent("pink-sketch");
+      p.background('#f8a9b8');
+
+      p.fill('#f244a3');
+      p.square(p.width/2 - 25, p.height/2 - 25, 50);
+
+      p.fill('#fc73c2');
+      p.circle(p.width/2, p.height/2 - 100, 100);
+      p.circle(p.width/2, p.height/2 + 100, 100);
+      p.circle(p.width/2 - 100, p.height/2, 100);
+      p.circle(p.width/2 + 100, p.height/2, 100);
+
+      p.stroke(0);
+      p.noFill();
+      p.line(0, 0, p.width, p.height);
+      p.line(p.width, 0, 0, p.height);
+    };
+  });
+</script>
 
 
-</body>
-</html>
+
